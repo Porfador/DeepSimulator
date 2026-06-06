@@ -22,11 +22,11 @@ from support_modules.common import FileExtensions as Fe
 
 import logging
 
-logger = logging.getLogger('fbprophet.plot')
+logger = logging.getLogger('prophet.plot')
 logger.setLevel(logging.CRITICAL)
-from fbprophet import Prophet
-from fbprophet.serialize import model_to_json, model_from_json
-from fbprophet.diagnostics import cross_validation, performance_metrics
+from prophet import Prophet
+from prophet.serialize import model_to_json, model_from_json
+from prophet.diagnostics import cross_validation, performance_metrics
 
 from numpy.random import triangular as triang
 
@@ -137,6 +137,7 @@ class ProphetGenerator:
         df_train = df_train.groupby(La.CASE_ID).start_timestamp.min().reset_index()
         df_train = df_train.groupby([pd.Grouper(key=La.START_TIME, freq='H')]).size().reset_index(name='count')
         df_train.rename(columns={La.START_TIME: 'ds', 'count': 'y'}, inplace=True)
+        df_train['ds'] = df_train['ds'].dt.tz_localize(None)
         df_train = df_train.fillna(1)
 
         max_cap = df_train.y.max() * 1.2

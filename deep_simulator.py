@@ -200,7 +200,9 @@ class DeepSimulator:
         clust_mets = self._clustering_metrics(self.parms)
         clust_mets.columns = ['metric', 'sim_val']
         clust_mets['run_num'] = 0.0
-        sim_values_df = pd.DataFrame(self.sim_values).sort_values(by='metric')
+        sim_values_df = pd.DataFrame(self.sim_values)
+        if not sim_values_df.empty and 'metric' in sim_values_df.columns:
+            sim_values_df = sim_values_df.sort_values(by='metric')
         results_df = pd.concat([sim_values_df, clust_mets])
 
         self._save_embedding_metrics_results(output_path, results_df)

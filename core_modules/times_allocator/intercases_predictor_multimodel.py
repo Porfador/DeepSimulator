@@ -90,6 +90,7 @@ class DualIntercasesPredictor():
         self.sequences, num_elements = self._encode_secuences(sequences, self.ac_index, rl_task, rl_table)
         self.rl_dict = self._initialize_roles(rl_table, check_avail=self.parms['reschedule'])
         self.ac_dict = self._initialize_activities(self.ac_index, init_states)
+        long_iarr = {k: v for k, v in long_iarr.items() if k in self.sequences}
         self.queue = self._initialize_queue(long_iarr)
         self.execution_state = self._initialize_exec_state(self.sequences)
         return self._generate(pr_act_initial, n_size, num_elements)
