@@ -4,7 +4,8 @@ channels:
   - defaults
 dependencies:
   - python=3.8
-  - fbprophet=0.7.1
+  #- fbprophet=0.7.1 #changed to prophet=1.3.0 but prophet is installed by pip. Because of that I deactivate that by commenting and added prophet under pip
+  #- h5py #Added later because of the errors but is already in and installed by pip? Already installed version is ==2.10.0
   - pip:
     - pandas==1.5.3
     - nltk==3.7
@@ -23,4 +24,4 @@ dependencies:
     - fitter==1.5.2
     - backports.zoneinfo[tzdata]
     - pyyaml==6.0
-    - h5py #Added later because of the errors
+    - prophet==1.3.0
