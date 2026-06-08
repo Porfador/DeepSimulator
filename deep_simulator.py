@@ -48,6 +48,8 @@ class DeepSimulator:
         # Structure optimization
         seq_generator_class = sg.SeqGeneratorFabric.get_generator(self.parms['s_gen']['gen_method'])
         seq_gen = seq_generator_class({**self.parms['gl'], **self.parms['s_gen']}, self.log_train)
+        if hasattr(seq_gen, '_verify_model'):
+            seq_gen._verify_model()
         print('############ Generate inter-arrivals ############')
         self.is_safe = self._read_bpmn(log_time=exec_times, is_safe=self.is_safe)
         generator = gen.InstancesGenerator(self.process_graph, self.log_train, self.parms['i_gen']['gen_method'],
