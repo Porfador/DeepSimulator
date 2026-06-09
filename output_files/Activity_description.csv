@@ -1,0 +1,18 @@
+|task_name|day_moment|rol|trace_position|dstribution|mean_processing_time|std_processing_time
+0|Request For Payment SUBMITTED by EMPLOYEE|['morning', 'night', 'afternoon']|['STAFF MEMBER']|6.777777777777778|norm|2671.2574620352593|578.9310970130717
+1|Request For Payment FINAL_APPROVED by SUPERVISOR|['morning', 'night', 'afternoon']|['STAFF MEMBER']|8.0|norm|2476.812258195887|772.8063021981492
+2|Request Payment|['morning', 'night', 'afternoon']|['SYSTEM']|9.0|norm|2638.3184438040344|621.9261734033621
+3|Payment Handled|['afternoon']|['SYSTEM']|10.0|uniform|2694.1099217785095|527.3109067366963
+4|Request For Payment APPROVED by PRE_APPROVER|['morning', 'night', 'afternoon']|['STAFF MEMBER']|6.25|uniform|1496.1|1006.8562288677347
+5|Request For Payment REJECTED by PRE_APPROVER|['night', 'afternoon', 'morning']|['STAFF MEMBER']|5.333333333333333|uniform|1665.5294117647059|995.8194645605663
+6|Request For Payment REJECTED by EMPLOYEE|['night', 'afternoon', 'morning']|['STAFF MEMBER']|6.5|norm|2596.5788819875775|646.7223969250364
+7|Request For Payment REJECTED by MISSING|['afternoon', 'morning']|['STAFF MEMBER']|5.0|norm|2616.230769230769|622.1761009486912
+8|Request For Payment REJECTED by SUPERVISOR|['morning', 'night', 'afternoon']|['STAFF MEMBER']|6.0|norm|2595.4166666666665|641.1840483014969
+9|Request For Payment SAVED by EMPLOYEE|['night', 'afternoon', 'morning']|['STAFF MEMBER']|2.5|uniform|2712.2033898305085|544.3081996991185
+10|Request For Payment APPROVED by ADMINISTRATION|['night', 'afternoon', 'morning']|['STAFF MEMBER']|7.777777777777778|uniform|1534.7203767972237|993.8831872669123
+11|Request For Payment REJECTED by ADMINISTRATION|['morning', 'night', 'afternoon']|['STAFF MEMBER']|6.166666666666667|uniform|1576.5|1002.61190868598
+12|Request For Payment APPROVED by BUDGET OWNER|['morning', 'night', 'afternoon']|['STAFF MEMBER']|8.5|norm|2595.3754337265786|667.1747177601146
+13|Request For Payment REJECTED by BUDGET OWNER|['morning', 'afternoon']|['STAFF MEMBER']|4.5|norm|2563.0731707317073|660.607679974405
+14|Request For Payment APPROVED by SUPERVISOR|['morning', 'afternoon']|['STAFF MEMBER']|5.0|expon|2457.090909090909|486.36414613397244
+15|Request For Payment FINAL_APPROVED by DIRECTOR|['morning', 'afternoon']|['STAFF MEMBER']|5.666666666666667|uniform|2668.818181818182|632.6332871680543
+16|Request For Payment FINAL_APPROVED by BUDGET OWNER|['night']|['STAFF MEMBER']|3.0|lognorm|3360.0|0.0
