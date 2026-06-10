@@ -1,6 +1,6 @@
-input_files/
+#input_files/
 *.pyc
 .spyproject/
-output_files/
+#output_files/
 .idea/
 note_to_me.txt

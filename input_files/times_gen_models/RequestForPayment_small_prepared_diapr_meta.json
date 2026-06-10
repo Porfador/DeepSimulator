@@ -1,0 +1,103 @@
+{
+    "ac_index": {
+        "End": 12,
+        "Payment Handled": 9,
+        "Request For Payment APPROVED by PRE_APPROVER": 7,
+        "Request For Payment APPROVED by SUPERVISOR": 8,
+        "Request For Payment FINAL_APPROVED by DIRECTOR": 10,
+        "Request For Payment FINAL_APPROVED by SUPERVISOR": 2,
+        "Request For Payment REJECTED by EMPLOYEE": 4,
+        "Request For Payment REJECTED by MISSING": 6,
+        "Request For Payment REJECTED by PRE_APPROVER": 11,
+        "Request For Payment REJECTED by SUPERVISOR": 3,
+        "Request For Payment SUBMITTED by EMPLOYEE": 1,
+        "Request Payment": 5,
+        "Start": 0
+    },
+    "dense_act": "linear",
+    "generated_at": "09/06/2026 20:29:52",
+    "inter_mean_states": {
+        "tasks": {
+            "End": 0.0,
+            "Payment Handled": 0.7569493941553813,
+            "Request For Payment APPROVED by PRE_APPROVER": 0.12829650748396293,
+            "Request For Payment APPROVED by SUPERVISOR": 0.008553100498930863,
+            "Request For Payment FINAL_APPROVED by DIRECTOR": 0.006414825374198147,
+            "Request For Payment FINAL_APPROVED by SUPERVISOR": 0.3449750534568781,
+            "Request For Payment REJECTED by EMPLOYEE": 0.022808267997148968,
+            "Request For Payment REJECTED by MISSING": 0.040627227369921595,
+            "Request For Payment REJECTED by PRE_APPROVER": 0.02993585174625802,
+            "Request For Payment REJECTED by SUPERVISOR": 0.0007127583749109052,
+            "Request For Payment SUBMITTED by EMPLOYEE": 0.49964362081254454,
+            "Request Payment": 0.4397719173200285,
+            "Start": 0.0
+        },
+        "wip": 19.152530292230935
+    },
+    "l_size": 100,
+    "log_size": 138,
+    "loss": 0.16033276170492172,
+    "lstm_act": "selu",
+    "n_size": 15,
+    "optim": "Nadam",
+    "roles": {
+        "Role 1": [
+            "STAFF MEMBER"
+        ],
+        "Role 2": [
+            "SYSTEM"
+        ]
+    },
+    "roles_table": [
+        {
+            "role": "Role 1",
+            "task": "Request For Payment REJECTED by SUPERVISOR"
+        },
+        {
+            "role": "Role 1",
+            "task": "Request For Payment APPROVED by SUPERVISOR"
+        },
+        {
+            "role": "Role 1",
+            "task": "Request For Payment FINAL_APPROVED by DIRECTOR"
+        },
+        {
+            "role": "Role 1",
+            "task": "Request For Payment REJECTED by PRE_APPROVER"
+        },
+        {
+            "role": "Role 1",
+            "task": "Request For Payment REJECTED by EMPLOYEE"
+        },
+        {
+            "role": "Role 1",
+            "task": "Request For Payment REJECTED by MISSING"
+        },
+        {
+            "role": "Role 1",
+            "task": "Request For Payment APPROVED by PRE_APPROVER"
+        },
+        {
+            "role": "Role 2",
+            "task": "Payment Handled"
+        },
+        {
+            "role": "Role 2",
+            "task": "Request Payment"
+        },
+        {
+            "role": "Role 1",
+            "task": "Request For Payment FINAL_APPROVED by SUPERVISOR"
+        },
+        {
+            "role": "Role 1",
+            "task": "Request For Payment SUBMITTED by EMPLOYEE"
+        }
+    ],
+    "usr_index": {
+        "End": 3,
+        "STAFF MEMBER": 1,
+        "SYSTEM": 2,
+        "Start": 0
+    }
+}

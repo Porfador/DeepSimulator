@@ -1,0 +1,6 @@
+metric,sim_val,run_num
+clustering_method,kmeans,0.0
+decomposition_method,pca,0.0
+number_clusters,3,0.0
+silhouette_score,0.549263545589411,0.0
+calinski_harabasz_score,40.06539945552817,0.0

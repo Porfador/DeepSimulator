@@ -171,8 +171,11 @@ class StructureOptimizer():
                     show_progressbar=False)
         # Save results
         try:
+            # `ascending` must be a boolean value, not the `bool` type.
+            # Passing `bool` breaks result sorting and leaves `best_parms`
+            # incomplete, which later triggers `KeyError: 'alg_manag'`.
             results = (pd.DataFrame(self.bayes_trials.results)
-                       .sort_values('loss', ascending=bool))
+                       .sort_values('loss', ascending=True))
             self.best_output = (results[results.status=='ok']
                                 .head(1).iloc[0].output)
             self.best_parms = best
