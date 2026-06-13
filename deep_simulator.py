@@ -43,11 +43,14 @@ class DeepSimulator:
         exec_times = dict()
         self.is_safe = self._read_inputs(log_time=exec_times, is_safe=self.is_safe)
         # get minimum date
-        start_time = (self.log_test.start_timestamp.min().strftime("%Y-%m-%dT%H:%M:%S.%f+00:00"))
+        ts_col = 'end_timestamp' if self.parms['gl']['read_options']['one_timestamp'] else 'start_timestamp'
+        start_time = (self.log_test[ts_col].min().strftime("%Y-%m-%dT%H:%M:%S.%f+00:00"))
         print('############ Structure optimization ############')
         # Structure optimization
         seq_generator_class = sg.SeqGeneratorFabric.get_generator(self.parms['s_gen']['gen_method'])
         seq_gen = seq_generator_class({**self.parms['gl'], **self.parms['s_gen']}, self.log_train)
+        if hasattr(seq_gen, '_verify_model'):
+            seq_gen._verify_model()
         print('############ Generate inter-arrivals ############')
         self.is_safe = self._read_bpmn(log_time=exec_times, is_safe=self.is_safe)
         generator = gen.InstancesGenerator(self.process_graph, self.log_train, self.parms['i_gen']['gen_method'],

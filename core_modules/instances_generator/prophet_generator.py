@@ -134,9 +134,10 @@ class ProphetGenerator:
 
     @staticmethod
     def _transform_features(df_train):
-        df_train = df_train.groupby(La.CASE_ID).start_timestamp.min().reset_index()
-        df_train = df_train.groupby([pd.Grouper(key=La.START_TIME, freq='H')]).size().reset_index(name='count')
-        df_train.rename(columns={La.START_TIME: 'ds', 'count': 'y'}, inplace=True)
+        ts_col = La.START_TIME if La.START_TIME in df_train.columns else La.END_TIME
+        df_train = df_train.groupby(La.CASE_ID)[ts_col].min().reset_index()
+        df_train = df_train.groupby([pd.Grouper(key=ts_col, freq='H')]).size().reset_index(name='count')
+        df_train.rename(columns={ts_col: 'ds', 'count': 'y'}, inplace=True)
         df_train['ds'] = df_train['ds'].dt.tz_localize(None)
         df_train = df_train.fillna(1)
 

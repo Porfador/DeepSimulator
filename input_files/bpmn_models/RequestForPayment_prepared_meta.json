@@ -1,8 +1,8 @@
 {
     "alg_manag": "replacement",
-    "epsilon": 0.47114048515536,
-    "eta": 0.11524245977553216,
+    "epsilon": 0.19588481380434308,
+    "eta": 0.23002186879463382,
     "gate_management": "equiprobable",
-    "generated_at": "09/06/2026 22:26:09",
-    "similarity": 0.7119211571494047
+    "generated_at": "10/06/2026 16:20:31",
+    "similarity": 0.6532938833286055
 }

@@ -1,3 +1,3 @@
 clustering_method,decomposition_method,number_clusters,silhouette_score,calinski_harabasz_score,input_method,embedding_method,log_name,times_included
-kmeans,pca,3,0.549263545589411,40.06539945552817,N/A,Dot product,RequestForPayment_prepared.xes,False
-0.0,0.0,0.0,0.0,0.0,N/A,Dot product,RequestForPayment_prepared.xes,False
+kmeans,pca,3,0.6560500113486166,47.244360677478106,N/A,Dot product,BPIChallenge2019_3WayMatchingEC_prepared_copy.csv,False
+0.0,0.0,0.0,0.0,0.0,N/A,Dot product,BPIChallenge2019_3WayMatchingEC_prepared_copy.csv,False

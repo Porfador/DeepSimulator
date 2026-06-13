@@ -80,15 +80,14 @@ class XesWriter(object):
             for attr_type, attr_value in event.items():
                 if attr_type in csv_mapping.keys():
                     attribute_type = csv_mapping[attr_type]
-                    if attribute_type in ["Activity", "Resource"]:
-                        if attribute_type == "Activity":
-                            attribute = XFactory.create_attribute_literal(
-                                'concept:name', attr_value, extension=None)
-                            attribute_map[attribute.get_key()] = attribute
-                        if attribute_type == "Resource":
-                            attribute = XFactory.create_attribute_literal(
-                                'org:resource', attr_value, extension=None)
-                            attribute_map[attribute.get_key()] = attribute
+                    if attr_type == 'task':
+                        attribute = XFactory.create_attribute_literal(
+                            'concept:name', attr_value, extension=None)
+                        attribute_map[attribute.get_key()] = attribute
+                    elif attr_type == 'user':
+                        attribute = XFactory.create_attribute_literal(
+                            'org:resource', attr_value, extension=None)
+                        attribute_map[attribute.get_key()] = attribute
                     elif attribute_type == transition['column']:
                         attribute = XFactory.create_attribute_timestamp(
                             "time:timestamp", attr_value, extension=None)
@@ -98,12 +97,14 @@ class XesWriter(object):
                             transition['value'],
                             extension=xlc)
                         attribute_map[attribute2.get_key()] = attribute2
-                    elif attribute_type in ['Case ID',
-                                            'Event ID', transition['skiped']]:
+                    elif attr_type in ['caseid', 'event_type'] or attribute_type in ['Case ID', 'Event ID', transition['skiped']]:
                         next
                     else:
-                        attribute = XFactory.create_attribute_discrete(
-                            attribute_type, int(attr_value))
-                        attribute_map[attribute.get_key()] = attribute
+                        try:
+                            attribute = XFactory.create_attribute_discrete(
+                                attribute_type, int(attr_value))
+                            attribute_map[attribute.get_key()] = attribute
+                        except (ValueError, TypeError):
+                            pass
             events.append(XFactory.create_event(attribute_map))
         return events

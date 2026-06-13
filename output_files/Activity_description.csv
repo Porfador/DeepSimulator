@@ -1,18 +1,18 @@
 |task_name|day_moment|rol|trace_position|dstribution|mean_processing_time|std_processing_time
-0|Request For Payment SUBMITTED by EMPLOYEE|['morning', 'night', 'afternoon']|['STAFF MEMBER']|6.777777777777778|norm|2671.2574620352593|578.9310970130717
-1|Request For Payment FINAL_APPROVED by SUPERVISOR|['morning', 'night', 'afternoon']|['STAFF MEMBER']|8.0|norm|2476.812258195887|772.8063021981492
-2|Request Payment|['morning', 'night', 'afternoon']|['SYSTEM']|9.0|norm|2638.3184438040344|621.9261734033621
-3|Payment Handled|['afternoon']|['SYSTEM']|10.0|uniform|2694.1099217785095|527.3109067366963
-4|Request For Payment APPROVED by PRE_APPROVER|['morning', 'night', 'afternoon']|['STAFF MEMBER']|6.25|uniform|1496.1|1006.8562288677347
-5|Request For Payment REJECTED by PRE_APPROVER|['night', 'afternoon', 'morning']|['STAFF MEMBER']|5.333333333333333|uniform|1665.5294117647059|995.8194645605663
-6|Request For Payment REJECTED by EMPLOYEE|['night', 'afternoon', 'morning']|['STAFF MEMBER']|6.5|norm|2596.5788819875775|646.7223969250364
-7|Request For Payment REJECTED by MISSING|['afternoon', 'morning']|['STAFF MEMBER']|5.0|norm|2616.230769230769|622.1761009486912
-8|Request For Payment REJECTED by SUPERVISOR|['morning', 'night', 'afternoon']|['STAFF MEMBER']|6.0|norm|2595.4166666666665|641.1840483014969
-9|Request For Payment SAVED by EMPLOYEE|['night', 'afternoon', 'morning']|['STAFF MEMBER']|2.5|uniform|2712.2033898305085|544.3081996991185
-10|Request For Payment APPROVED by ADMINISTRATION|['night', 'afternoon', 'morning']|['STAFF MEMBER']|7.777777777777778|uniform|1534.7203767972237|993.8831872669123
-11|Request For Payment REJECTED by ADMINISTRATION|['morning', 'night', 'afternoon']|['STAFF MEMBER']|6.166666666666667|uniform|1576.5|1002.61190868598
-12|Request For Payment APPROVED by BUDGET OWNER|['morning', 'night', 'afternoon']|['STAFF MEMBER']|8.5|norm|2595.3754337265786|667.1747177601146
-13|Request For Payment REJECTED by BUDGET OWNER|['morning', 'afternoon']|['STAFF MEMBER']|4.5|norm|2563.0731707317073|660.607679974405
-14|Request For Payment APPROVED by SUPERVISOR|['morning', 'afternoon']|['STAFF MEMBER']|5.0|expon|2457.090909090909|486.36414613397244
-15|Request For Payment FINAL_APPROVED by DIRECTOR|['morning', 'afternoon']|['STAFF MEMBER']|5.666666666666667|uniform|2668.818181818182|632.6332871680543
-16|Request For Payment FINAL_APPROVED by BUDGET OWNER|['night']|['STAFF MEMBER']|3.0|lognorm|3360.0|0.0
+0|SRM: Created|['morning', 'afternoon']|['user_016', 'batch_00']|4.333333333333333|uniform|2706.6382978723404|533.6236790788978
+1|SRM: Document Completed|['morning', 'night', 'afternoon']|['user_016', 'batch_00']|6.444444444444445|uniform|1830.127659574468|1072.8325922235379
+2|SRM: In Transfer to Execution Syst.|['morning', 'night', 'afternoon']|['batch_00']|6.777777777777778|expon|1558.7288135593221|1076.0938830334378
+3|SRM: Change was Transmitted|['morning', 'night', 'afternoon']|['batch_00']|5.5|uniform|1682.0469083155651|1053.6495970100088
+4|SRM: Ordered|['morning', 'night', 'afternoon']|['batch_00']|6.555555555555555|uniform|1680.8936170212767|1091.965263925017
+5|Create Purchase Order Item|['morning', 'night', 'afternoon']|['user_000']|5.5|uniform|1670.6609808102346|1084.509552910363
+6|SRM: Complete|['morning', 'night', 'afternoon']|['user_016', 'batch_00']|6.222222222222222|loguniform|1635.4468085106382|1082.4788889595056
+7|SRM: Awaiting Approval|['morning', 'night', 'afternoon']|['user_016', 'batch_00']|6.375|uniform|1748.8085106382978|1067.0172512174554
+8|Vendor creates invoice|['night']|['NONE']|7.75|uniform|2713.375796178344|534.6128477634941
+9|Record Goods Receipt|['morning', 'afternoon']|['user_000']|12.0|norm|2680.938166311301|541.5235303442196
+10|Record Invoice Receipt|['morning', 'night', 'afternoon']|['user_008', 'user_006', 'user_019', 'user_015', 'user_012', 'user_004', 'user_013', 'user_011', 'user_001', 'user_018', 'batch_00', 'user_020', 'user_024', 'user_007']|12.714285714285714|norm|2704.9576271186443|522.7161769013558
+11|Clear Invoice|['morning', 'afternoon']|['user_002', 'user_005', 'user_006']|15.0|uniform|2693.503184713376|534.7835638657385
+12|Remove Payment Block|['morning', 'afternoon']|['user_006', 'user_023', 'user_015', 'batch_02', 'user_112']|12.0|norm|2538.823529411765|523.4038183787214
+13|Vendor creates debit memo|['night']|['NONE']|9.0|loguniform|780.0|0.0
+14|Cancel Invoice Receipt|['morning']|['user_006']|13.0|lognorm|3240.0|0.0
+15|Change Price|['morning']|['user_000']|11.0|loguniform|660.0|0.0
+16|SRM: Deleted|['morning']|['batch_00']|13.0|loguniform|2340.0|0.0

@@ -149,7 +149,7 @@ class LogReplayer():
                     if task == x['task']:
                         prev_rec = x
                         break
-            record = create_record(trace, i, False, prev_rec)
+            record = create_record(trace, i, 'start_timestamp' not in trace[i], prev_rec)
             if record['resource'] != 'AUTO':
                 t_times.append(record)
             return t_times

@@ -133,5 +133,5 @@ if __name__ == '__main__':
         fix_bpmn(sys.argv[1], sys.argv[1])   # in-place
     else:
         # Default: fix the RequestForPayment BPMN in-place
-        path = r'input_files\bpmn_models\RequestForPayment_two_ts.bpmn'
+        path = r'input_files\bpmn_models\BPIChallenge2019_3WayMatchingEC.bpmn'
         fix_bpmn(path, path)

@@ -78,9 +78,10 @@ class IntercaseMannager():
     
     def _append_csv_start_end(self):
         end_start_times = dict()
+        ts_col = 'start_timestamp' if 'start_timestamp' in self._log.columns else 'end_timestamp'
         for case, group in self._log.groupby('caseid'):
             end_start_times[(case, 'Start')] = (
-                group.start_timestamp.min()-timedelta(microseconds=1))
+                group[ts_col].min()-timedelta(microseconds=1))
             end_start_times[(case, 'End')] = (
                 group.end_timestamp.max()+timedelta(microseconds=1))
         new_data = list()
@@ -94,7 +95,8 @@ class IntercaseMannager():
                 temp_event['task'] = new_event
                 temp_event['user'] = new_event
                 temp_event['end_timestamp'] = end_start_times[(key, new_event)]
-                temp_event['start_timestamp'] = end_start_times[(key, new_event)]
+                if ts_col == 'start_timestamp':
+                    temp_event['start_timestamp'] = end_start_times[(key, new_event)]
                 if new_event == 'Start':
                     trace.insert(0, temp_event)
                 else:
